@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 70vw;
+    padding: 2rem 1rem;
+    margin: 0 auto;
+    /* background-color: aqua; */
+}
+
+.header_container {
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.header_tittle {
+    margin-bottom: 1rem;
+    font-size: 1.9rem;
+    line-height: 3.9rem;
+    text-align: center;
+    color: #1A1A1A;
+}
+
+.header_desc {
+    max-width: 568px;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+    color: #1A1A1A;
+}
+
+.main_container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+@media screen and (min-width: 1254px) and (max-width: 1315px) {
+    .main_container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1253px) {
+    .main_container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width: 650px) and (max-width: 1000px) {
+    .main_container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 100px) and (max-width: 650px) {
+    .main_container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+
+.card_container {
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    border: 1px solid #000000;
+    border-radius: 10px;
+}
+
+.card_image_container {
+    /* Not understand why I take position relative over here */
+    position: relative;
+    overflow: hidden;
+    height: 11.0rem; 
+    transition: transform 200ms ease-in-out; /* Smooth transition for scaling */
+}
+@media (min-width:650px){
+    .card_image_container{
+        height: 14rem;
+    }
+}
+
+.card_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 200ms ease-in-out; /* Smooth transition for scaling */      
+}
+.card_title_container{
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    position: relative;
+}
+.card_container:hover .card_image{
+    transform: scale(1.1);
+    
+}
+
+.card_title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.6rem;
+    margin-bottom: 0.1rem;
+    color: rgb(7, 6, 6);
+    transition: color 100ms ease-in-out;
+}
+
+/* Means when u enter in the card_title_anchor(a tag) then color will change in the card_title class not the entire card_title_anchor*/
+
+.card_title_anchor:hover .card_title{
+    color: rgb(51, 51, 198);
+}
+
+.card_desc{
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+    color: #1A1A1A;
+    font-weight: 400;
+}
+
+.card_footer_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 10px;
+}
+
+.author_container{
+    display: flex;
+    align-items: center;
+    gap: 1.0rem;
+}
+
+
+.author_avatar_container {
+    display: flex;
+    height: 2.rem;
+    width: 2.5rem;
+    overflow: hidden;
+    border: 2px solid black;
+    border-radius: 50%;
+    background-color: rgb(200, 194, 194); 
+}
+.author_info_container{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.author_info_container > span:nth-child(1) {
+    color: rgb(38, 38, 149); /* Style the first <span> (author's name) */
+}
+
+.author_info_container > span:nth-child(2) {
+    color: rgb(136, 126, 126); /* Style the second <span> (date) */
+}
+
+
+.card_tag_container{
+    font-size: 0.9rem;
+    border: 1px solid rgb(76, 71, 71);
+    border-radius: 2px;
+    line-height: 1.3rem;
+    color: gray;
+}
